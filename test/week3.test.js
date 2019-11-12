@@ -44,7 +44,7 @@ describe('camelCaseWords', () => {
     });
 });
 
-describe.only('getTotalSubjects', () => {
+describe('getTotalSubjects', () => {
     test('returns 0 if no people have subjects', () => {
         const people = [
             { name: 'Billy', subjects: [] },
@@ -73,30 +73,30 @@ describe.only('getTotalSubjects', () => {
     });
 });
 
-describe('checkIngredients', () => {
+describe.only('checkIngredients', () => {
     test('returns false if no menu items include the specified ingredient', () => {
         const menu = [{
-                name: 'tofu fritters',
-                ingredients: ['tofu', 'egg yolk', 'breadbrumbs', 'paprika']
-            },
-            {
-                name: 'black bean curry',
-                ingredients: ['black beans', 'garam masala', 'rice']
-            },
-            {
-                name: 'chocolate tiffin',
-                ingredients: [
-                    'dark chocolate',
-                    'egg',
-                    'flour',
-                    'brown sugar',
-                    'vanilla essence'
-                ]
-            },
-            {
-                name: 'hummus',
-                ingredients: ['chickpeas', 'tahini', 'lemon', 'garlic', 'salt']
-            }
+            name: 'tofu fritters',
+            ingredients: ['tofu', 'egg yolk', 'breadbrumbs', 'paprika']
+        },
+        {
+            name: 'black bean curry',
+            ingredients: ['black beans', 'garam masala', 'rice']
+        },
+        {
+            name: 'chocolate tiffin',
+            ingredients: [
+                'dark chocolate',
+                'egg',
+                'flour',
+                'brown sugar',
+                'vanilla essence'
+            ]
+        },
+        {
+            name: 'hummus',
+            ingredients: ['chickpeas', 'tahini', 'lemon', 'garlic', 'salt']
+        }
         ];
 
         expect(checkIngredients(menu, 'milk')).toBe(false);
@@ -104,27 +104,27 @@ describe('checkIngredients', () => {
 
     test('returns true if a menu item includes the specified ingredient', () => {
         const menu = [{
-                name: 'tofu fritters',
-                ingredients: ['tofu', 'egg yolk', 'breadbrumbs', 'paprika']
-            },
-            {
-                name: 'black bean curry',
-                ingredients: ['black beans', 'garam masala', 'rice']
-            },
-            {
-                name: 'chocolate tiffin',
-                ingredients: [
-                    'dark chocolate',
-                    'egg',
-                    'flour',
-                    'brown sugar',
-                    'vanilla essence'
-                ]
-            },
-            {
-                name: 'hummus',
-                ingredients: ['chickpeas', 'tahini', 'lemon', 'garlic', 'salt']
-            }
+            name: 'tofu fritters',
+            ingredients: ['tofu', 'egg yolk', 'breadbrumbs', 'paprika']
+        },
+        {
+            name: 'black bean curry',
+            ingredients: ['black beans', 'garam masala', 'rice']
+        },
+        {
+            name: 'chocolate tiffin',
+            ingredients: [
+                'dark chocolate',
+                'egg',
+                'flour',
+                'brown sugar',
+                'vanilla essence'
+            ]
+        },
+        {
+            name: 'hummus',
+            ingredients: ['chickpeas', 'tahini', 'lemon', 'garlic', 'salt']
+        }
         ];
 
         expect(checkIngredients(menu, 'dark chocolate')).toBe(true);
