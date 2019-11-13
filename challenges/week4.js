@@ -15,6 +15,15 @@ function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
   // Your code here
+  //loop through and filter names beginning with the character entered.
+  let beginningWith = names.filter(function (item) {
+    if (item[0] === char) {
+      return true;
+    } else {
+      return false;
+    }
+  })
+  return beginningWith;
 }
 
 function findVerbs(words) {
