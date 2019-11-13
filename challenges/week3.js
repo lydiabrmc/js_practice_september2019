@@ -57,10 +57,36 @@ function checkIngredients(menu, ingredient) {
     return ingredientFound;
 }
 
+// describe.only('duplicateNumbers', () => {
+//     test('returns an array of numbers which appear in both arr1 and arr2', () => {
+//         let arr1 = [1, 55, 4, 3, 7, 8];
+//         let arr2 = [55, 23, 65, 0];
+//         expect(duplicateNumbers(arr1, arr2)).toEqual([55]);
+
+//         arr1 = [6, 4, 2, 4, 1, 9];
+//         arr2 = [1];
+//         expect(duplicateNumbers(arr1, arr2)).toEqual([1]);
+//     });
+
 function duplicateNumbers(arr1, arr2) {
     if (arr1 === undefined) throw new Error('arr1 is required');
     if (arr2 === undefined) throw new Error('arr2 is required');
     // Your code here!
+    let array = [];
+    arr1.forEach(function (originalNum) {
+        arr2.forEach(function (dup) {
+            if (originalNum === dup) {
+                array.push(originalNum)
+            }
+        })
+    })
+    let oneNum = new Set(array);
+    let oneNumArr = [...oneNum];
+    function sortNumber(a, b) {
+        return a - b;
+    }
+    let orderedNums = oneNumArr.sort(sortNumber);
+    return orderedNums;
 }
 
 module.exports = {
