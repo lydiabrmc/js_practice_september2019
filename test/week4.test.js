@@ -18,7 +18,7 @@ describe("findSmallNums", () => {
   });
 });
 
-describe.only("findNamesBeginningWith", () => {
+describe("findNamesBeginningWith", () => {
   test("returns an array of names beginning with the specified character", () => {
     const names = ["Sally", "Dave", "Susan", "Geoff", "Riley", "Sam"];
     expect(findNamesBeginningWith(names, "S")).toEqual([
@@ -31,7 +31,7 @@ describe.only("findNamesBeginningWith", () => {
   });
 });
 
-describe("findVerbs", () => {
+describe.only("findVerbs", () => {
   test("returns an array of words that are considered verbs (because they begin with 'to ')", () => {
     const words = [
       "to eat",

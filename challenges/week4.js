@@ -29,6 +29,14 @@ function findNamesBeginningWith(names, char) {
 function findVerbs(words) {
   if (!words) throw new Error("words is required");
   // Your code here
+  let verbs = words.filter(function (item) {
+    if (item.includes("to ")) {
+      return true;
+    } else {
+      return false;
+    }
+  })
+  return verbs;
 }
 
 function getIntegers(nums) {
