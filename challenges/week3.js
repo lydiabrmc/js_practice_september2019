@@ -20,7 +20,7 @@ function camelCaseWords(words) {
             camelC.push(words[i]);
         }
         // need to capitalise next word and push into array
-        if (words.indexOf[words[i]] >= 1) {
+        if (words.indexOf(words[i]) >= 1) {
             camelC.push(words[i][0].toUpperCase() + words[i].substring(1));
         }
     }
@@ -56,17 +56,6 @@ function checkIngredients(menu, ingredient) {
     })
     return ingredientFound;
 }
-
-// describe.only('duplicateNumbers', () => {
-//     test('returns an array of numbers which appear in both arr1 and arr2', () => {
-//         let arr1 = [1, 55, 4, 3, 7, 8];
-//         let arr2 = [55, 23, 65, 0];
-//         expect(duplicateNumbers(arr1, arr2)).toEqual([55]);
-
-//         arr1 = [6, 4, 2, 4, 1, 9];
-//         arr2 = [1];
-//         expect(duplicateNumbers(arr1, arr2)).toEqual([1]);
-//     });
 
 function duplicateNumbers(arr1, arr2) {
     if (arr1 === undefined) throw new Error('arr1 is required');
