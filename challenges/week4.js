@@ -42,7 +42,15 @@ function findVerbs(words) {
 function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
   // Your code here
+  let integers = [];
+  for (let i = 0; i < nums.length; i++) {
+    if (Number.isInteger(nums[i])) {
+      integers.push(nums[i]);
+    }
+  }
+  return integers
 }
+
 
 function getCities(users) {
   if (!users) throw new Error("users is required");
