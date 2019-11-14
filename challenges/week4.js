@@ -48,13 +48,18 @@ function getIntegers(nums) {
       integers.push(nums[i]);
     }
   }
-  return integers
+  return integers;
 }
 
 
 function getCities(users) {
   if (!users) throw new Error("users is required");
   // Your code here
+  let userCity = [];
+  users.forEach(function (item) {
+    userCity.push(item.data.city.displayName)
+  })
+  return userCity;
 }
 
 function getSquareRoots(nums) {
