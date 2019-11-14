@@ -118,7 +118,7 @@ describe("getSquareRoots", () => {
   });
 });
 
-describe.only("findSentencesContaining", () => {
+describe("findSentencesContaining", () => {
   const sentencesAboutPackageJson = [
     "You should specify a license for your package so that people know how they are permitted to use it",
     "The main field is a module ID that is the primary entry point to your program",
@@ -154,7 +154,7 @@ describe.only("findSentencesContaining", () => {
   });
 });
 
-describe("getLongestSides", () => {
+describe.only("getLongestSides", () => {
   test("returns the longest side of each set of triangle data", () => {
     const data = [[6, 7, 10], [9, 3, 6], [6, 3, 5], [6, 13, 12], [7, 12, 8]];
     expect(getLongestSides(data)).toEqual([10, 9, 6, 13, 12]);

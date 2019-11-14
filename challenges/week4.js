@@ -88,6 +88,13 @@ function findSentencesContaining(sentences, str) {
 function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
   // Your code here
+  // filter through each array and find largest number in the array for each. 
+  // return largest num
+  let maxTri = [];
+  triangles.forEach(function (item) {
+    maxTri.push(Math.max(...item))
+  })
+  return maxTri;
 }
 
 module.exports = {
