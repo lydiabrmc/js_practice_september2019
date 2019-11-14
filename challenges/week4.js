@@ -75,16 +75,14 @@ function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
   // Your code here
-  // filter through array
-  // find the str in the sentence and return
-  // let specSent = sentences.filter(function (item) {
-  //   if (item.includes(str)) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // })
-  // return specSent;
+  let findSent = sentences.filter(function (item) {
+    if (item.toLowerCase().includes(str.toLowerCase())) {
+      return true;
+    } else {
+      return false;
+    }
+  })
+  return findSent;
 }
 
 function getLongestSides(triangles) {
