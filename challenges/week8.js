@@ -21,7 +21,6 @@ const count1sand0s = str => {
     1: 0,
     0: 0
   };
-
   str.split('').forEach(item => {
     (parseFloat(item)) ? count[1]++ : count[0]++;
   })
@@ -31,6 +30,7 @@ const count1sand0s = str => {
 const reverseNumber = n => {
   if (n === undefined) throw new Error("n is required");
   // Your code here!
+  return parseInt(n.toString().split('').reverse().join(''))
 };
 
 const sumArrays = arrs => {
