@@ -1,7 +1,8 @@
 const {
     sumMultiples,
     isValidDNA,
-    getComplementaryDNA
+    getComplementaryDNA,
+    isItPrime
 } = require("../challenges/week9");
 
 describe("sumMultiples", () => {
@@ -23,5 +24,14 @@ describe("isValidDNA", () => {
 describe("getComplementaryDNA", () => {
     test("This function will receive a valid DNA string (see above) and should return a string of the complementary base pairs. In DNA, T always pairs with A, and C always pairs with G. So a string of 'ACTG' would have a complementary DNA string of 'TGAC'.", () => {
         expect(getComplementaryDNA("ACTG")).toBe("TGAC");
+    });
+});
+
+describe("isItPrime", () => {
+    test("This function should receive a number and return true/false depending on whether it is a prime number or not. A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)", () => {
+        expect(isItPrime(7)).toBe(true);
+    });
+    test("This function should receive a number and return true/false depending on whether it is a prime number or not. A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)", () => {
+        expect(isItPrime(6)).toBe(false);
     });
 });
