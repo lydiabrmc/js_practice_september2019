@@ -22,7 +22,16 @@ const sumDigits = n => {
 const createRange = (start, end, step) => {
   if (start === undefined) throw new Error("start is required");
   if (end === undefined) throw new Error("end is required");
+  const range = []
+  if (step === undefined) {
+    step = 1;
+  }
+  for (let i = start; i <= end; i = i + step) {
+    range.push(parseFloat(i));
+  }
+  return range
 };
+
 
 /**
  * This function takes an array of user objects and their usage in minutes of various applications. The format of the data should be as follows:
