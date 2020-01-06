@@ -114,6 +114,26 @@ const createMatrix = (n, fill) => {
 const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
+  if (staff.length === 0) {
+    return false
+  }
+  if (day.toLowerCase() === "monday" || day.toLowerCase() === "tuesday" || day.toLowerCase() === "wednesday" || day.toLowerCase() === "thursday" || day.toLowerCase() === "friday" || day.toLowerCase() === "saturday" || day.toLowerCase() === "sunday") {
+    let count = 0
+    for (let i = 0; i < staff.length; i++) {
+      const days = staff[i].rota.map(function (staffDay) {
+        return staffDay.toLowerCase();
+      })
+      for (let i = 0; i < days.length; i++)
+        if (days[i].includes(day.toLowerCase())) {
+          count += 1
+        }
+    }
+    if (count > 2) {
+      return true
+    } else {
+      return false
+    }
+  }
 };
 
 module.exports = {

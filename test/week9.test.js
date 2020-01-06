@@ -4,7 +4,7 @@ const {
     getComplementaryDNA,
     isItPrime,
     createMatrix,
-    // areWeCovered
+    areWeCovered
 } = require("../challenges/week9");
 
 describe("sumMultiples", () => {
@@ -44,17 +44,37 @@ describe("isItPrime", () => {
     });
 });
 
-describe.only("createMatrix", () => {
+describe("createMatrix", () => {
     test("This function should receive a number and return an array of n arrays, each filled with n items. The parameter 'fill' should be used as the filler of the arrays. For example, given parameters 3 and 'foo' the resulting matrix should be:[['foo', 'foo', 'foo'],['foo', 'foo', 'foo'], ['foo', 'foo', 'foo']]", () => {
         expect(createMatrix(3, "foo")).toEqual([["foo", "foo", "foo"], ["foo", "foo", "foo"], ["foo", "foo", "foo"]]);
     });
 });
 
-// describe("areWeCovered", () => {
-//     test("This function takes an array of staff objects in the format:[{ name: 'Sally', rota: ['Monday', 'Tuesday', 'Friday'] },{ name: 'Pedro', rota: ['Saturday', 'Sunday', 'Tuesday', 'Wednesday'] },...etc]and a day of the week. For the café to run successfully, at least 3 staff members are required per day. The function should return true/false depending on whether there are enough staff scheduled for the given day.", () => {
-//         expect(areWeCovered()).toBe(true);
-//     });
-//     test("This function takes an array of staff objects in the format:[{ name: 'Sally', rota: ['Monday', 'Tuesday', 'Friday'] },{ name: 'Pedro', rota: ['Saturday', 'Sunday', 'Tuesday', 'Wednesday'] },...etc]and a day of the week. For the café to run successfully, at least 3 staff members are required per day. The function should return true/false depending on whether there are enough staff scheduled for the given day.", () => {
-//         expect(areWeCovered()).toBe(false);
-//     });
-// });
+describe.only("areWeCovered", () => {
+    test("returns false when no staff", () => {
+        expect(areWeCovered([], "Monday")).toBe(false);
+        expect(areWeCovered([], "Tuesday")).toBe(false);
+        expect(areWeCovered([], "Wednesday")).toBe(false);
+        expect(areWeCovered([], "Thursday")).toBe(false);
+        expect(areWeCovered([], "Friday")).toBe(false);
+        expect(areWeCovered([], "Saturday")).toBe(false);
+        expect(areWeCovered([], "Sunday")).toBe(false);
+    });
+    test("Returns false when less than 3 people in", () => {
+        const staff = [
+            { name: "Lizzie", rota: ["Monday", "Tuesday", "Wednesday"] },
+            { name: "Rob", rota: ["Monday", "Tuesday", "Wednesday"] },
+            { name: "Steven", rota: ["Monday", "Tuesday", "Wednesday"] },
+            { name: "Andy", rota: ["Monday", "Tuesday", "Wednesday"] }
+        ]
+        expect(areWeCovered(staff, "Friday")).toBe(false);
+    })
+    test("returns true when there are 3 members of staff", () => {
+        const staff = [
+            { name: "Lizzie", rota: ["Monday", "Tuesday", "Wednesday"] },
+            { name: "Rob", rota: ["Monday", "Tuesday", "Wednesday"] },
+            { name: "Steven", rota: ["Monday", "Tuesday", "Wednesday"] }
+        ]
+        expect(areWeCovered(staff, "Monday")).toBe(true);
+    });
+})
