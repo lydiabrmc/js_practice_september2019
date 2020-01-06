@@ -95,6 +95,8 @@ const getScreentimeAlertList = (users, date) => {
  */
 const hexToRGB = hexStr => {
   if (hexStr === undefined) throw new Error("hexStr is required");
+  hexStr = hexStr.replace('#', '').match(/.{1,2}/g);
+  return hexStr ? `rgb(${parseInt(hexStr[0], 16)},${parseInt(hexStr[1], 16)},${parseInt(hexStr[2], 16)})` : null;
 };
 
 /**

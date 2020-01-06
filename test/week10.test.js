@@ -1,7 +1,8 @@
 const {
     sumDigits,
     createRange,
-    getScreentimeAlertList
+    getScreentimeAlertList,
+    hexToRGB
 } = require("../challenges/week10");
 
 describe("sumDigits", () => {
@@ -19,7 +20,7 @@ describe("createRange", () => {
     });
 })
 
-describe.only("getScreentimeAlertList", () => {
+describe("getScreentimeAlertList", () => {
     test("The function returns an array of usernames of users who have used more than 100 minutes of screentime for a given date.", () => {
         const array = [
             {
@@ -44,5 +45,13 @@ describe.only("getScreentimeAlertList", () => {
         ]
         expect(getScreentimeAlertList(array, "2019-05-02")).toEqual(["beth_1234"]);
     });
+})
+describe.only("hexToRGB", () => {
+    test("Returns RGB of Hex recieved", () => {
+        expect(hexToRGB("#FF1133")).toBe("rgb(255,17,51)");
+    });
+    // test("add text test", () => {
+    //     expect(hexToRGB()).toBe();
+    // });
 })
 
