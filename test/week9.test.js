@@ -2,7 +2,7 @@ const {
     sumMultiples,
     isValidDNA,
     getComplementaryDNA,
-    // isItPrime,
+    isItPrime,
     // createMatrix,
     // areWeCovered
 } = require("../challenges/week9");
@@ -35,14 +35,14 @@ describe.only("getComplementaryDNA", () => {
     });
 });
 
-// describe("isItPrime", () => {
-//     test("This function should receive a number and return true/false depending on whether it is a prime number or not. A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)", () => {
-//         expect(isItPrime(7)).toBe(true);
-//     });
-//     test("This function should receive a number and return true/false depending on whether it is a prime number or not. A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)", () => {
-//         expect(isItPrime(6)).toBe(false);
-//     });
-// });
+describe.only("isItPrime", () => {
+    test("returns true if divisible by 1 and itself", () => {
+        expect(isItPrime(7)).toBe(true);
+    });
+    test("This function should receive a number and return true/false depending on whether it is a prime number or not. A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)", () => {
+        expect(isItPrime(6)).toBe(false);
+    });
+});
 
 // describe("createMatrix", () => {
 //     test("This function should receive a number and return an array of n arrays, each filled with n items. The parameter 'fill' should be used as the filler of the arrays. For example, given parameters 3 and 'foo' the resulting matrix should be:[['foo', 'foo', 'foo'],['foo', 'foo', 'foo'], ['foo', 'foo', 'foo']]", () => {
