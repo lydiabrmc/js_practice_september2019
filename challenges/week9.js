@@ -42,6 +42,23 @@ const isValidDNA = str => {
  */
 const getComplementaryDNA = str => {
   if (str === undefined) throw new Error("str is required");
+  if (isValidDNA(str) === false) {
+    return str
+  } else {
+    const pairDNA = (str.toUpperCase().split('').map(function (item) {
+      switch (item) {
+        case "C":
+          return "G";
+        case "G":
+          return "C";
+        case "A":
+          return "T";
+        case "T":
+          return "A";
+      }
+    })).join('');
+    return pairDNA;
+  }
 };
 
 /**

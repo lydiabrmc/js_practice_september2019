@@ -1,7 +1,7 @@
 const {
     sumMultiples,
     isValidDNA,
-    // getComplementaryDNA,
+    getComplementaryDNA,
     // isItPrime,
     // createMatrix,
     // areWeCovered
@@ -26,6 +26,12 @@ describe("isValidDNA", () => {
 describe.only("getComplementaryDNA", () => {
     test("This function will receive a valid DNA string (see above) and should return a string of the complementary base pairs. In DNA, T always pairs with A, and C always pairs with G. So a string of 'ACTG' would have a complementary DNA string of 'TGAC'.", () => {
         expect(getComplementaryDNA("ACTG")).toBe("TGAC");
+    });
+    test("input invalid", () => {
+        expect(isValidDNA("ACTGB")).toBe(false);
+    });
+    test("returns true regardless of capitalisation", () => {
+        expect(isValidDNA("cGTacC")).toBe(true);
     });
 });
 
