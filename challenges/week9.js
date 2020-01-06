@@ -20,6 +20,19 @@ const sumMultiples = arr => {
  */
 const isValidDNA = str => {
   if (str === undefined) throw new Error("str is required");
+  let string = str.toLowerCase().split('');
+  const newArr = string.filter(function (item) {
+    if (item === 'c' || item === 'a' || item === 't' || item === 'g') {
+      return false;
+    } else {
+      return true;
+    }
+  })
+  if (newArr.length > 0) {
+    return false
+  } else {
+    return true
+  }
 };
 
 /**
