@@ -65,7 +65,23 @@ const createRange = (start, end, step) => {
 const getScreentimeAlertList = (users, date) => {
   if (users === undefined) throw new Error("users is required");
   if (date === undefined) throw new Error("date is required");
+  let usersScreenTime = []
+  users.forEach(user => {
+    user.screenTime.forEach(sTime => {
+      if (sTime.date === date) {
+        let totalScreenT = 0;
+        Object.keys(sTime.usage).forEach(usageType => {
+          totalScreenT += sTime.usage[usageType]
+        })
+        if (totalScreenT >= 100) {
+          usersScreenTime.push(user.username);
+        }
+      }
+    })
+  })
+  return usersScreenTime;
 };
+
 
 /**
  * This function will receive a hexadecimal color code in the format #FF1133. A hexadecimal code is a number written in hexadecimal notation, i.e. base 16. If you want to know more about hexadecimal notation:
