@@ -4,6 +4,11 @@
  */
 const sumDigits = n => {
   if (n === undefined) throw new Error("n is required");
+  var total = 0;
+  for (var i = 1; i <= n; i++) {
+    total += i;
+  }
+  return total;
 };
 
 /**
