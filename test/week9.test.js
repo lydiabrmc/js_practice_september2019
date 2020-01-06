@@ -3,7 +3,7 @@ const {
     isValidDNA,
     getComplementaryDNA,
     isItPrime,
-    // createMatrix,
+    createMatrix,
     // areWeCovered
 } = require("../challenges/week9");
 
@@ -35,7 +35,7 @@ describe.only("getComplementaryDNA", () => {
     });
 });
 
-describe.only("isItPrime", () => {
+describe("isItPrime", () => {
     test("returns true if divisible by 1 and itself", () => {
         expect(isItPrime(7)).toBe(true);
     });
@@ -44,11 +44,11 @@ describe.only("isItPrime", () => {
     });
 });
 
-// describe("createMatrix", () => {
-//     test("This function should receive a number and return an array of n arrays, each filled with n items. The parameter 'fill' should be used as the filler of the arrays. For example, given parameters 3 and 'foo' the resulting matrix should be:[['foo', 'foo', 'foo'],['foo', 'foo', 'foo'], ['foo', 'foo', 'foo']]", () => {
-//         expect(createMatrix((3, 'foo'))).toBe([['foo', 'foo', 'foo'], ['foo', 'foo', 'foo'], ['foo', 'foo', 'foo']]);
-//     });
-// });
+describe.only("createMatrix", () => {
+    test("This function should receive a number and return an array of n arrays, each filled with n items. The parameter 'fill' should be used as the filler of the arrays. For example, given parameters 3 and 'foo' the resulting matrix should be:[['foo', 'foo', 'foo'],['foo', 'foo', 'foo'], ['foo', 'foo', 'foo']]", () => {
+        expect(createMatrix(3, "foo")).toEqual([["foo", "foo", "foo"], ["foo", "foo", "foo"], ["foo", "foo", "foo"]]);
+    });
+});
 
 // describe("areWeCovered", () => {
 //     test("This function takes an array of staff objects in the format:[{ name: 'Sally', rota: ['Monday', 'Tuesday', 'Friday'] },{ name: 'Pedro', rota: ['Saturday', 'Sunday', 'Tuesday', 'Wednesday'] },...etc]and a day of the week. For the café to run successfully, at least 3 staff members are required per day. The function should return true/false depending on whether there are enough staff scheduled for the given day.", () => {
