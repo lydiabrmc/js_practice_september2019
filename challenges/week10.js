@@ -4,8 +4,8 @@
  */
 const sumDigits = n => {
   if (n === undefined) throw new Error("n is required");
-  var total = 0;
-  for (var i = 1; i <= n; i++) {
+  let total = 0;
+  for (let i = 1; i <= n; i++) {
     total += i;
   }
   return total;
@@ -111,6 +111,19 @@ const hexToRGB = hexStr => {
  */
 const findWinner = board => {
   if (board === undefined) throw new Error("board is required");
+  let winner = "";
+  if (winner === undefined) {
+    return null
+  }
+  board.forEach(win => {
+
+  })
+  //loop through the array
+  //get all Xs and 0s by index
+  //compare indexes 
+  //set const win = vertical[0], "" === "winner" on each row (repeat for horizontal)
+  //need to make different conditions for diagonal
+  //vertical x3, diagonal x2 or horizontal x3
 };
 
 module.exports = {

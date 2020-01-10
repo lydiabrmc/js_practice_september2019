@@ -2,7 +2,8 @@ const {
     sumDigits,
     createRange,
     getScreentimeAlertList,
-    hexToRGB
+    hexToRGB,
+    findWinner
 } = require("../challenges/week10");
 
 describe("sumDigits", () => {
@@ -54,4 +55,16 @@ describe.only("hexToRGB", () => {
     //     expect(hexToRGB()).toBe();
     // });
 })
+
+describe.only("findWinner", () => {
+    test("Returns winner of game", () => {
+        const array = [
+            ["X", "0", null],
+            ["X", null, "0"],
+            ["X", null, "0"]
+        ]
+        expect(findWinner(array)).toBe("X");
+    });
+})
+
 
