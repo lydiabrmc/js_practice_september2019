@@ -58,7 +58,7 @@ describe.only("hexToRGB", () => {
 
 describe.only("findWinner", () => {
     test("Returns winner of game", () => {
-        const array = [
+        let array = [
             ["X", "0", null],
             ["X", null, "0"],
             ["X", null, "0"]

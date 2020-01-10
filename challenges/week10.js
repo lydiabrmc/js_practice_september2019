@@ -109,22 +109,73 @@ const hexToRGB = hexStr => {
  * The function should return "X" if player X has won, "0" if the player 0 has won, and null if there is currently no winner.
  * @param {Array} board
  */
+
 const findWinner = board => {
   if (board === undefined) throw new Error("board is required");
-  let winner = "";
-  if (winner === undefined) {
-    return null
+  if (board.length === 0) throw new Error("board needs to be populated");
+  const find = (winLose) => {
+    if (board[winLose.firstRow][winLose.firstCol] === board[winLose.secRow][winLose.secCol]
+      && board[winLose.firstRow][winLose.firstCol] === board[winLose.thirdRow][winLose.thirdCol]) return board[winLose.firstRow][winLose.firstCol];
   }
-  board.forEach(win => {
-
-  })
-  //loop through the array
-  //get all Xs and 0s by index
   //compare indexes 
-  //set const win = vertical[0], "" === "winner" on each row (repeat for horizontal)
   //need to make different conditions for diagonal
-  //vertical x3, diagonal x2 or horizontal x3
+  //col x3, diagonal x2 or row x3
+  let row = 0;
+  let rowMatch = {
+    firstRow: row, firstCol: 0, secRow: row, secCol: 1,
+    thirdRow: row, thirdCol: 2
+  };
+  if (find(rowMatch)) return find(rowMatch);
+  else {
+    row = 1;
+    rowMatch = {
+      firstRow: row, firstCol: 0, secRow: row, secCol: 1,
+      thirdRow: row, thirdCol: 2
+    };
+    if (find(rowMatch)) return find(rowMatch);
+    else {
+      row = 2;
+      rowMatch = {
+        firstRow: row, firstCol: 0, secRow: row, secCol: 1, thirdRow: row, thirdCol: 2
+      };
+      if (find(rowMatch)) return find(rowMatch);
+    }
+  }
+  let col = 0;
+  let colMatch = {
+    firstRow: 0, firstCol: col, secRow: 1, secCol: col,
+    thirdRow: 2, thirdCol: col
+  };
+  if (find(colMatch)) return find(colMatch); else {
+    col = 1;
+    colMatch = {
+      firstRow: 0, firstCol: col, secRow: 1, secCol: col,
+      thirdRow: 2, thirdCol: col
+    };
+    if (find(colMatch)) return find(colMatch); else {
+      col = 2;
+      colMatch = {
+        firstRow: 0, firstCol: col, secRow: 1, secCol: col,
+        thirdRow: 2, thirdCol: col
+      };
+      if (find(colMatch)) return find(colMatch);
+    }
+  }
+  let diag = {
+    firstRow: 0, firstCol: 0, secRow: 1, secCol: 1,
+    thirdRow: 2, thirdCol: 2
+  };
+  if (find(diag)) return find(diag);
+  else {
+    diag = {
+      firstRow: 2, firstCol: 0, secRow: 1, secCol: 1,
+      thirdRow: 0, thirdCol: 2
+    };
+    if (find(diag)) return find(diag);
+    else return null;
+  }
 };
+
 
 module.exports = {
   sumDigits,
